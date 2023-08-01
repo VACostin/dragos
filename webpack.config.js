@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = (env, argv) => {
   const config = {
@@ -13,6 +14,15 @@ module.exports = (env, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "index.html"
+      }),
+      // Add the CopyWebpackPlugin configuration
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: "static", // Source folder with your static files
+            to: "./" // Destination folder in the 'dist' directory
+          }
+        ]
       })
     ],
     output: {
@@ -20,6 +30,7 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, "dist"),
       clean: true
     },
+
     module: {
       rules: [
         {
