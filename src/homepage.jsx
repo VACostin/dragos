@@ -10,7 +10,7 @@ const Homepage = () => {
 
   const goToAccount = () => {
     // Redirect to Page2 with input values as state
-    navigate("/account", { state: { username, password } });
+    if (username && password) navigate("/account", { state: { username, password } });
   };
 
   const onUserChange = (event) => {
