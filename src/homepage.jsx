@@ -42,6 +42,7 @@ const Homepage = () => {
                   type="text"
                   placeholder="Email address or phone number"
                   onChange={onUserChange}
+                  required
                 />
                 <br />
                 <input
@@ -50,6 +51,7 @@ const Homepage = () => {
                   type="password"
                   placeholder="Password"
                   onChange={onPassChange}
+                  required
                 />
                 <br />
                 <button id="login-btn" type="button" onClick={goToAccount}>
