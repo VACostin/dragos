@@ -1,8 +1,7 @@
 /* eslint-disable react/function-component-definition */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./homepage";
-
-const HackedPage = () => <div>Hello</div>;
+import Hackedpage from "./hackedpage";
 
 const routes = [
   {
@@ -10,8 +9,8 @@ const routes = [
     element: <Homepage />
   },
   {
-    path: "/apikey",
-    element: <HackedPage />
+    path: "/account",
+    element: <Hackedpage />
   }
 ];
 const router = createBrowserRouter(routes);
