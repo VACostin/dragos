@@ -8,8 +8,9 @@ const Homepage = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const goToAccount = () => {
+  const goToAccount = (event) => {
     // Redirect to Page2 with input values as state
+    event.preventDefault();
     if (username && password) navigate("/account", { state: { username, password } });
   };
 
@@ -35,7 +36,7 @@ const Homepage = () => {
           </div>
           <div className="col-5 col-xs-12">
             <div className="login-form">
-              <form action="">
+              <form action="" onSubmit={goToAccount}>
                 <input
                   id="email"
                   value={username}
@@ -54,7 +55,7 @@ const Homepage = () => {
                   required
                 />
                 <br />
-                <button id="login-btn" type="button" onClick={goToAccount}>
+                <button id="login-btn" type="submit" onClick={goToAccount}>
                   Log In
                 </button>
                 <br />
